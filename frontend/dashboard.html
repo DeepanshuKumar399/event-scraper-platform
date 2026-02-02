@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Event Scraper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>📊 Event Dashboard</h1>
+      <div>
+        <button id="runScraperBtn" class="btn-secondary">Run Scraper Now</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+    <div class="filters">
+      <input type="text" id="cityFilter" placeholder="Filter by city" value="Sydney">
+      <input type="date" id="dateFilter">
+      <input type="text" id="keywordFilter" placeholder="Filter by keyword">
+      <select id="statusFilter">
+        <option value="">All Status</option>
+        <option value="new">New</option>
+        <option value="updated">Updated</option>
+        <option value="inactive">Inactive</option>
+        <option value="imported">Imported</option>
+      </select>
+      <button id="filterBtn" class="btn-primary">Apply Filters</button>
+      <button id="clearBtn" class="btn-secondary">Clear</button>
+    </div>
+    <div class="actions">
+      <button id="importBtn" class="btn-success">Import Selected to DB</button>
+      <span id="selectedCount">0 selected</span>
+    </div>
+    <div class="table-container">
+      <table id="eventsTable">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAll"></th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>City</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="7" class="loading">Loading events...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
